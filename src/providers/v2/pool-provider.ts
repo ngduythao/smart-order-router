@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
+import { Token } from '@ngduythao/sdk-core';
 import { Pair } from '@ngduythao/v2-sdk';
-import { Token } from '@uniswap/sdk-core';
 import retry, { Options as RetryOptions } from 'async-retry';
 import _ from 'lodash';
 

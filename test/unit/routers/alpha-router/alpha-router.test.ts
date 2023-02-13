@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
 import { Protocol, SwapRouter } from '@ngduythao/router-sdk';
+import { Fraction, Percent, TradeType } from '@ngduythao/sdk-core';
 import { Pair } from '@ngduythao/v2-sdk';
 import { encodeSqrtRatioX96, Pool, Position } from '@ngduythao/v3-sdk';
-import { Fraction, Percent, TradeType } from '@uniswap/sdk-core';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 import sinon from 'sinon';

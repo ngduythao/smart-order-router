@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Logger } from '@ethersproject/logger';
 import { SwapRouter, Trade } from '@ngduythao/router-sdk';
+import { Currency, Token, TradeType } from '@ngduythao/sdk-core';
 import { FeeAmount, MethodParameters, Pool, Route } from '@ngduythao/v3-sdk';
-import { Currency, Token, TradeType } from '@uniswap/sdk-core';
 import _ from 'lodash';
 
 import { IOnChainQuoteProvider, RouteWithQuotes } from '../../providers';

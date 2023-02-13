@@ -4,13 +4,13 @@ import {
   SwapRouter as SwapRouter02,
   Trade,
 } from '@ngduythao/router-sdk';
+import { Currency, TradeType } from '@ngduythao/sdk-core';
 import {
   SwapRouter as UniveralRouter,
   UNIVERSAL_ROUTER_ADDRESS,
 } from '@ngduythao/universal-router-sdk';
 import { Route as V2RouteRaw } from '@ngduythao/v2-sdk';
 import { Route as V3RouteRaw } from '@ngduythao/v3-sdk';
-import { Currency, TradeType } from '@uniswap/sdk-core';
 import _ from 'lodash';
 
 import {

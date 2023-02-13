@@ -1,8 +1,13 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { Protocol } from '@ngduythao/router-sdk';
+import {
+  Currency,
+  CurrencyAmount,
+  Token,
+  TradeType,
+} from '@ngduythao/sdk-core';
 import { Pair } from '@ngduythao/v2-sdk/dist/entities';
 import { FeeAmount, Pool } from '@ngduythao/v3-sdk';
-import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core';
 import _ from 'lodash';
 
 import { IV2PoolProvider } from '../providers';

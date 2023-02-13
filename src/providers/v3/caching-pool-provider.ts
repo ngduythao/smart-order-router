@@ -1,5 +1,5 @@
+import { Token } from '@ngduythao/sdk-core';
 import { FeeAmount, Pool } from '@ngduythao/v3-sdk';
-import { Token } from '@uniswap/sdk-core';
 import _ from 'lodash';
 
 import { ChainId } from '../../util/chains';

@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@ngduythao/sdk-core';
 
 import {
   CUSD_CELO,

@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
+import { Token } from '@ngduythao/sdk-core';
 import { Pair } from '@ngduythao/v2-sdk';
 import { encodeSqrtRatioX96, FeeAmount, Pool } from '@ngduythao/v3-sdk';
-import { Token } from '@uniswap/sdk-core';
 import { TokenList } from '@uniswap/token-lists';
 import _ from 'lodash';
 import {

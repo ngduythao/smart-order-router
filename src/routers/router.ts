@@ -5,6 +5,13 @@ import {
   Protocol,
   Trade,
 } from '@ngduythao/router-sdk';
+import {
+  Currency,
+  Fraction,
+  Percent,
+  Token,
+  TradeType,
+} from '@ngduythao/sdk-core';
 import { SwapOptions as UniversalRouterSwapOptions } from '@ngduythao/universal-router-sdk';
 import { Route as V2RouteRaw } from '@ngduythao/v2-sdk';
 import {
@@ -13,13 +20,6 @@ import {
   Position,
   Route as V3RouteRaw,
 } from '@ngduythao/v3-sdk';
-import {
-  Currency,
-  Fraction,
-  Percent,
-  Token,
-  TradeType,
-} from '@uniswap/sdk-core';
 
 import { SimulationStatus } from '../providers';
 import { CurrencyAmount } from '../util/amounts';

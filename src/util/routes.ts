@@ -1,7 +1,7 @@
 import { Protocol } from '@ngduythao/router-sdk';
+import { Percent } from '@ngduythao/sdk-core';
 import { Pair } from '@ngduythao/v2-sdk';
 import { Pool } from '@ngduythao/v3-sdk';
-import { Percent } from '@uniswap/sdk-core';
 import _ from 'lodash';
 
 import { RouteWithValidQuote } from '../routers/alpha-router';

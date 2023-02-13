@@ -1,5 +1,5 @@
 import { ApprovalTypes } from '@ngduythao/router-sdk';
-import { Currency, CurrencyAmount } from '@uniswap/sdk-core';
+import { Currency, CurrencyAmount } from '@ngduythao/sdk-core';
 
 import { SwapRouter02__factory } from '../types/other/factories/SwapRouter02__factory';
 import { log, SWAP_ROUTER_02_ADDRESS } from '../util';

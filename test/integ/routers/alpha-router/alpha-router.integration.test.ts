@@ -9,7 +9,7 @@ import {
   Percent,
   Token,
   TradeType,
-} from '@uniswap/sdk-core';
+} from '@ngduythao/sdk-core';
 import {
   AlphaRouter,
   AlphaRouterConfig,

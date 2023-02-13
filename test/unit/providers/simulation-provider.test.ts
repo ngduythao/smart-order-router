@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
 import { Trade } from '@ngduythao/router-sdk';
-import { Percent, TradeType } from '@uniswap/sdk-core';
+import { Percent, TradeType } from '@ngduythao/sdk-core';
 import { BigNumber } from 'ethers';
 import sinon from 'sinon';
 import {

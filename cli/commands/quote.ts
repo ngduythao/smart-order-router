@@ -1,7 +1,7 @@
 import { Logger } from '@ethersproject/logger';
 import { Protocol } from '@ngduythao/router-sdk';
+import { Currency, Percent, TradeType } from '@ngduythao/sdk-core';
 import { flags } from '@oclif/command';
-import { Currency, Percent, TradeType } from '@uniswap/sdk-core';
 import dotenv from 'dotenv';
 import _ from 'lodash';
 

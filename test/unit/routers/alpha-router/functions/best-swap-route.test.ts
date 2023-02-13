@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
+import { Fraction, TradeType } from '@ngduythao/sdk-core';
 import { Pair } from '@ngduythao/v2-sdk';
 import { Pool } from '@ngduythao/v3-sdk';
-import { Fraction, TradeType } from '@uniswap/sdk-core';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 import sinon from 'sinon';

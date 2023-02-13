@@ -1,4 +1,4 @@
-import { Currency, Ether, NativeCurrency, Token } from '@uniswap/sdk-core';
+import { Currency, Ether, NativeCurrency, Token } from '@ngduythao/sdk-core';
 
 export enum ChainId {
   MAINNET = 1,
