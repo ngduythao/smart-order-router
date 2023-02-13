@@ -1,6 +1,6 @@
 import { JsonRpcProvider } from '@ethersproject/providers';
+import { PERMIT2_ADDRESS } from '@ngduythao/universal-router-sdk';
 import { TradeType } from '@uniswap/sdk-core';
-import { PERMIT2_ADDRESS } from '@uniswap/universal-router-sdk';
 import { BigNumber } from 'ethers/lib/ethers';
 
 import { SwapOptions, SwapRoute, SwapType } from '../routers';

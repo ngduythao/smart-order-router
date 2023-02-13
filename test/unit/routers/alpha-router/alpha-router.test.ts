@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { Protocol, SwapRouter } from '@uniswap/router-sdk';
+import { Protocol, SwapRouter } from '@ngduythao/router-sdk';
+import { Pair } from '@ngduythao/v2-sdk';
+import { encodeSqrtRatioX96, Pool, Position } from '@ngduythao/v3-sdk';
 import { Fraction, Percent, TradeType } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, Pool, Position } from '@uniswap/v3-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 import sinon from 'sinon';
@@ -1113,7 +1113,7 @@ describe('alpha router', () => {
     });
 
     test('succeeds to route on mixed only', async () => {
-      const amount = CurrencyAmount.fromRawAmount(USDC, 10000)
+      const amount = CurrencyAmount.fromRawAmount(USDC, 10000);
       const swap = await alphaRouter.route(
         amount,
         WRAPPED_NATIVE_CURRENCY[1],
@@ -1839,7 +1839,10 @@ describe('alpha router', () => {
     });
 
     test('succeeds to route on v3 only', async () => {
-      const amount = CurrencyAmount.fromRawAmount(WRAPPED_NATIVE_CURRENCY[1], 10000)
+      const amount = CurrencyAmount.fromRawAmount(
+        WRAPPED_NATIVE_CURRENCY[1],
+        10000
+      );
       const swap = await alphaRouter.route(
         amount,
         USDC,
@@ -1878,9 +1881,7 @@ describe('alpha router', () => {
 
       for (const r of swap!.route) {
         expect(r.route.input.equals(USDC)).toBeTruthy();
-        expect(
-          r.route.output.equals(amount.currency.wrapped)
-        ).toBeTruthy();
+        expect(r.route.output.equals(amount.currency.wrapped)).toBeTruthy();
       }
 
       expect(swap!.quote.lessThan(swap!.quoteGasAdjusted)).toBeTruthy();
@@ -2041,7 +2042,10 @@ describe('alpha router', () => {
     });
 
     test('succeeds to route and generate calldata and simulates', async () => {
-      const amount = CurrencyAmount.fromRawAmount(WRAPPED_NATIVE_CURRENCY[1], 10000);
+      const amount = CurrencyAmount.fromRawAmount(
+        WRAPPED_NATIVE_CURRENCY[1],
+        10000
+      );
       const swapParams = {
         type: SwapType.UNIVERSAL_ROUTER,
         deadline: Math.floor(Date.now() / 1000) + 1000000,
@@ -2091,9 +2095,7 @@ describe('alpha router', () => {
 
       for (const r of swap!.route) {
         expect(r.route.input.equals(USDC)).toBeTruthy();
-        expect(
-          r.route.output.equals(amount.currency.wrapped)
-        ).toBeTruthy();
+        expect(r.route.output.equals(amount.currency.wrapped)).toBeTruthy();
       }
 
       expect(swap!.quote.lessThan(swap!.quoteGasAdjusted)).toBeTruthy();

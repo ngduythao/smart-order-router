@@ -1,5 +1,5 @@
+import { FACTORY_ADDRESS } from '@ngduythao/v3-sdk';
 import { Token } from '@uniswap/sdk-core';
-import { FACTORY_ADDRESS } from '@uniswap/v3-sdk';
 
 import { ChainId, NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';
 
