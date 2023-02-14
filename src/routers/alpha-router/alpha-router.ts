@@ -379,6 +379,7 @@ export class AlphaRouter
     arbitrumGasDataProvider,
     simulator,
   }: AlphaRouterParams) {
+    console.log('alpha router');
     this.chainId = chainId;
     this.provider = provider;
     this.multicall2Provider =
@@ -835,7 +836,7 @@ export class AlphaRouter
     // from the same block.
     const blockNumber =
       partialRoutingConfig.blockNumber ?? this.getBlockNumberPromise();
-
+    console.log('blockNumber', blockNumber);
     const routingConfig: AlphaRouterConfig = _.merge(
       {},
       DEFAULT_ROUTING_CONFIG_BY_CHAIN(this.chainId),

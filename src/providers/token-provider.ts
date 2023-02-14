@@ -494,6 +494,14 @@ export const WBTC_GNOSIS = new Token(
   'Wrapped BTC from Ethereum on Gnosis'
 );
 
+export const USDC_FUJI = new Token(
+  ChainId.FUJI,
+  '0xF34985A23411D790124f3dF6bdE829513FCff898',
+  6,
+  'USDC',
+  'USD Coin bridged using Multichain'
+);
+
 // Moonbeam Tokens
 export const USDC_MOONBEAM = new Token(
   ChainId.MOONBEAM,

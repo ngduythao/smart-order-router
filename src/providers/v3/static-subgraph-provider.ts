@@ -161,6 +161,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     USDC_MOONBEAM,
     WBTC_MOONBEAM,
   ],
+  [ChainId.FUJI]: [WRAPPED_NATIVE_CURRENCY[ChainId.FUJI]],
 };
 
 /**

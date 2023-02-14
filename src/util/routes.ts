@@ -7,6 +7,8 @@ import _ from 'lodash';
 import { RouteWithValidQuote } from '../routers/alpha-router';
 import { MixedRoute, V2Route, V3Route } from '../routers/router';
 
+import { V3_CORE_FACTORY_ADDRESSES } from './addresses';
+
 import { CurrencyAmount } from '.';
 
 export const routeToString = (
@@ -29,7 +31,11 @@ export const routeToString = (
         ? ` -- ${pool.fee / 10000}% [${Pool.getAddress(
             pool.token0,
             pool.token1,
-            pool.fee
+            pool.fee,
+            undefined,
+            route.input.chainId
+              ? V3_CORE_FACTORY_ADDRESSES[route.input.chainId]
+              : undefined
           )}]`
         : ` -- [${Pair.getAddress(
             (pool as Pair).token0,
@@ -37,14 +43,14 @@ export const routeToString = (
           )}]`
     } --> `;
   });
-
+  console.log('poolFeePath', poolFeePath);
   for (let i = 0; i < tokenPath.length; i++) {
     routeStr.push(tokenPath[i]);
     if (i < poolFeePath.length) {
       routeStr.push(poolFeePath[i]);
     }
   }
-
+  // console.log('routeStr', routeStr);
   return routeStr.join('');
 };
 
@@ -58,8 +64,8 @@ export const routeAmountsToString = (
     },
     CurrencyAmount.fromRawAmount(routeAmounts[0]!.amount.currency, 0)
   );
-
   const routeStrings = _.map(routeAmounts, ({ protocol, route, amount }) => {
+    // console.log('routeAmounts', route);
     const portion = amount.divide(total);
     const percent = new Percent(portion.numerator, portion.denominator);
     /// @dev special case for MIXED routes we want to show user friendly V2+V3 instead

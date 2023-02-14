@@ -17,6 +17,7 @@ export enum ChainId {
   CELO_ALFAJORES = 44787,
   GNOSIS = 100,
   MOONBEAM = 1284,
+  FUJI = 43113,
 }
 
 // WIP: Gnosis, Moonbeam
@@ -35,6 +36,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.GÖRLI,
   ChainId.CELO_ALFAJORES,
   ChainId.CELO,
+  ChainId.FUJI,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -102,6 +104,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.GNOSIS;
     case 1284:
       return ChainId.MOONBEAM;
+    case 43113:
+      return ChainId.FUJI;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -124,6 +128,7 @@ export enum ChainName {
   CELO_ALFAJORES = 'celo-alfajores',
   GNOSIS = 'gnosis-mainnet',
   MOONBEAM = 'moonbeam-mainnet',
+  FUJI = 'fuji',
 }
 
 export enum NativeCurrencyName {
@@ -181,6 +186,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
   [ChainId.ARBITRUM_GOERLI]: [
+    'ETH',
+    'ETHER',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.FUJI]: [
     'ETH',
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
@@ -249,6 +259,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.GNOSIS;
     case 1284:
       return ChainName.MOONBEAM;
+    case 43113:
+      return ChainName.FUJI;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -288,6 +300,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_CELO!;
     case ChainId.CELO_ALFAJORES:
       return process.env.JSON_RPC_PROVIDER_CELO_ALFAJORES!;
+    case ChainId.FUJI:
+      return process.env.JSON_RPC_PROVIDER_FUJI!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -407,6 +421,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WGLMR',
     'Wrapped GLMR'
+  ),
+  [ChainId.FUJI]: new Token(
+    ChainId.FUJI,
+    '0xF642A802c7ccdC2c57b9e351a12f1138d2E6b338',
+    18,
+    'WETH',
+    'Wrapped ETH'
   ),
 };
 

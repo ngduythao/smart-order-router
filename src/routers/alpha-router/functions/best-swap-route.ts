@@ -36,7 +36,7 @@ export async function getBestSwapRoute(
   routes: RouteWithValidQuote[];
 } | null> {
   const now = Date.now();
-
+  console.log('now', now);
   const { forceMixedRoutes } = routingConfig;
 
   /// Like with forceCrossProtocol, we apply that logic here when determining the bestSwapRoute
@@ -93,6 +93,7 @@ export async function getBestSwapRoute(
   // We check this here, and if there is a mismatch
   // add the missing amount to a random route. The missing amount size should be neglible so the quote should still be highly accurate.
   const { routes: routeAmounts } = swapRoute;
+  console.log('routes', routeAmounts[0]!.poolAddresses);
   const totalAmount = _.reduce(
     routeAmounts,
     (total, routeAmount) => total.add(routeAmount.amount),
@@ -130,7 +131,7 @@ export async function getBestSwapRoute(
     },
     `Found best swap route. ${routeAmounts.length} split.`
   );
-
+  console.log('routeAmountsToString', routeAmountsToString(routeAmounts));
   return swapRoute;
 }
 
@@ -431,7 +432,7 @@ export async function getBestSwapRouteBy(
     // They should all be pegged, and this is just an estimate, so we do a merge
     // to an arbitrary stable.
     throw new Error(
-      `Could not find a USD token for computing gas costs on ${chainId}`
+      `Could not find a USD token for computing gas costs on 1 ${chainId}`
     );
   }
   const usdToken = usdGasTokensByChain[chainId]![0]!;

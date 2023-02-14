@@ -110,6 +110,7 @@ export class Quote extends BaseCommand {
 
     let swapRoutes: SwapRoute | null;
     if (exactIn) {
+      console.log('swapRoutes - if');
       const amountIn = parseAmount(amountStr, tokenIn);
       swapRoutes = await router.route(
         amountIn,
@@ -145,6 +146,7 @@ export class Quote extends BaseCommand {
         }
       );
     } else {
+      console.log('swapRoutes - else');
       const amountOut = parseAmount(amountStr, tokenOut);
       swapRoutes = await router.route(
         amountOut,
@@ -201,7 +203,7 @@ export class Quote extends BaseCommand {
       route: routeAmounts,
       simulationStatus,
     } = swapRoutes;
-
+    console.log('a');
     this.logSwapResults(
       routeAmounts,
       quote,

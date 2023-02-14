@@ -152,7 +152,7 @@ export class QuoteToRatio extends BaseCommand {
         quoteGasAdjusted,
         route: routeAmounts,
       } = swapRoutes.result;
-
+      console.log('b');
       this.logSwapResults(
         routeAmounts,
         quote,
